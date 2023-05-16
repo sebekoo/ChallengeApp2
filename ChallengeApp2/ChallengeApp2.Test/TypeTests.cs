@@ -6,8 +6,8 @@
         public void TEST()
         {
             // arrange
-            var user1 = GetUser("Tomasz");
-            var user2 = GetUser("Tomasz");
+            var user1 = GetUser("Adam");
+            var user2 = GetUser("Adam");
 
 
             // act

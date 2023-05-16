@@ -4,10 +4,6 @@
     {
         List<int> Score = new();
 
-        public User(string login)
-        {
-            Login = login;
-        }
         public User(string login, string password)
         {
             Login = login;

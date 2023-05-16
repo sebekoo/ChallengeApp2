@@ -1,6 +1,6 @@
 namespace ChallengeApp2.Test
 {
-    public class Tests
+    public class EmployeeTests
     {
         [Test]
         public void WhenEmployeeCollect_ShouldReturnCorrectResult()

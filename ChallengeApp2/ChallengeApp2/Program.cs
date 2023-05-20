@@ -1,5 +1,4 @@
 ﻿using ChallengeApp2;
-using System.Threading.Channels;
 
 Console.WriteLine("Program do oceny pracownika");
 Console.WriteLine("===========================");

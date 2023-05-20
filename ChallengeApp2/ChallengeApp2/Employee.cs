@@ -1,23 +1,26 @@
 ﻿namespace ChallengeApp2
 {
-    public class Employee
+    public class Employee : Person
     {
-        private readonly char sex = 'M';
-
         private List<float> grades = new List<float>();
+
         public Employee()
+            : this("no name")
         {
-        
+            //this.Surname = surname;
+        }
+        public Employee(string name)
+            : this(name, "no surmane")
+        {
+            //this.Surname = surname;
         }
         public Employee(string name, string surname)
+            : base(name, surname)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.sex = 'K'; // readonly mozemy tu zmieniac
+            var i = this.counter; // odczytywanie z klasy Person zmiennej protected id
+            //this.Surname = surname;
         }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-
+        
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)

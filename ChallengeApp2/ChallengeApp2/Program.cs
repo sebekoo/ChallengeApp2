@@ -5,17 +5,39 @@ Console.WriteLine("Program do oceny pracownika");
 Console.WriteLine("===========================");
 Console.WriteLine();
 
-var employee = new Employee("Adam", "Nowak");
+var employee = new Employee();
+
+//try
+//{
+//    Employee emp = null;
+//    var name = emp.Name;
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine("Błąd w programie nie podano imienia : " + ex.Message);
+//}
+//finally
+//{
+//    Console.WriteLine("Finally here");
+//}
 
 while (true)
 {
     Console.WriteLine("Podaj ocenę praownika");
     var input = Console.ReadLine();
-    if(input == "q")
+    if (input == "q")
     {
         break;
     }
-    employee.AddGrade(input);
+
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Exception cached: " + ex.Message);
+    }
 }
 
 var statistics = employee.GetStatistics();

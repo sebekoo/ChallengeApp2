@@ -1,14 +1,19 @@
-﻿using System.Diagnostics;
-
-namespace ChallengeApp2
+﻿namespace ChallengeApp2
 {
     public class Employee
     {
+        private readonly char sex = 'M';
+
         private List<float> grades = new List<float>();
+        public Employee()
+        {
+        
+        }
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
+            this.sex = 'K'; // readonly mozemy tu zmieniac
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
@@ -21,7 +26,8 @@ namespace ChallengeApp2
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                throw new Exception("Invalid grade value");
+                //Console.WriteLine("Invalid grade value");
             }
         }
 
@@ -37,7 +43,8 @@ namespace ChallengeApp2
             }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("String is not float");
+                //Console.WriteLine("String is not float");
                 Console.WriteLine();
             }
         }
@@ -79,9 +86,8 @@ namespace ChallengeApp2
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter");
-                    break;
-
+                    throw new Exception("Wrong letter");
+                    //Console.WriteLine("Wrong letter");
             }
         }
 

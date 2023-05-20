@@ -1,34 +1,24 @@
 ﻿using ChallengeApp2;
+using System.Threading.Channels;
+
+Console.WriteLine("Program do oceny pracownika");
+Console.WriteLine("===========================");
+Console.WriteLine();
 
 var employee = new Employee("Adam", "Nowak");
-//employee.AddGrade("Adam");
-//employee.AddGrade("5");
-//employee.AddGrade(2f);
-employee.AddGrade(6d);
-var statistics = employee.GetStatisticsWithForEach();
 
-Console.WriteLine("forEach");
-Console.WriteLine($"Average : {statistics.Average:N2}");
-Console.WriteLine($"Min     : {statistics.Min}");
-Console.WriteLine($"Max     : {statistics.Max}");
-Console.WriteLine("");
-var statistics2 = employee.GetStatisticsWithFor();
+while (true)
+{
+    Console.WriteLine("Podaj ocenę praownika");
+    var input = Console.ReadLine();
+    if(input == "q")
+    {
+        break;
+    }
+    employee.AddGrade(input);
+}
 
-Console.WriteLine("for");
-Console.WriteLine($"Average : {statistics.Average:N2}");
-Console.WriteLine($"Min     : {statistics.Min}");
-Console.WriteLine($"Max     : {statistics.Max}");
-Console.WriteLine("");
-var statistics3 = employee.GetStatisticsWithWhile();
-
-Console.WriteLine("while");
-Console.WriteLine($"Average : {statistics.Average:N2}");
-Console.WriteLine($"Min     : {statistics.Min}");
-Console.WriteLine($"Max     : {statistics.Max}");
-Console.WriteLine("");
-var statistics4 = employee.GetStatisticsWithDoWhile();
-
-Console.WriteLine("doWhile");
-Console.WriteLine($"Average : {statistics.Average:N2}");
-Console.WriteLine($"Min     : {statistics.Min}");
-Console.WriteLine($"Max     : {statistics.Max}");
+var statistics = employee.GetStatistics();
+Console.WriteLine($"AVG :{statistics.Average}");
+Console.WriteLine($"Min :{statistics.Min}");
+Console.WriteLine($"Max :{statistics.Max}");

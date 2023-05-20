@@ -5,7 +5,14 @@ Console.WriteLine("===========================");
 Console.WriteLine();
 
 //var employee = new Employee("Adamek", "Atomek");
-var employee1 = new Supervisor("Adamek", "Atomek");
+//var employee1 = new Supervisor("Adamek", "Atomek");
+var employee1 = new EmployeeInFile("Adamek", "Atomek");
+
+
+// !!!  Zakomentuj trzy linie poniżej aby odczytać z pliku !!!
+//employee1.AddGrade(0.5f);
+//employee1.AddGrade(34);
+//employee1.AddGrade('c');
 
 
 //try
@@ -22,25 +29,25 @@ var employee1 = new Supervisor("Adamek", "Atomek");
 //    Console.WriteLine("Finally here");
 //}
 
-while (true)
-{
-    Console.WriteLine("Podaj ocenę praownika");
-    var input = Console.ReadLine();
-    if (input == "q")
-    {
-        break;
-    }
+//while (true)
+//{
+//    Console.WriteLine("Podaj ocenę praownika");
+//    var input = Console.ReadLine();
+//    if (input == "q")
+//    {
+//        break;
+//    }
 
-    try
-    {
-        //employee.AddGrade(input);
-        employee1.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Exception cached: " + ex.Message);
-    }
-}
+//    try
+//    {
+//        //employee.AddGrade(input);
+//        employee1.AddGrade(input);
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine("Exception cached: " + ex.Message);
+//    }
+//}
 
 //var statistics = employee.GetStatistics();
 var statistics = employee1.GetStatistics();
